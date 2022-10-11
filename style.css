@@ -1,60 +1,99 @@
 @import url('https://fonts.googleapis.com/css?family=Inter');
-body
-{
-    margin : 0;
-    font-family: Inter;
-}
-.Navbar > img {
-    width: 150px;
-}
-.innerBox {
-    display: flex;
-    align-items: center; 
-}
-
-.Navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(25, 24, 24, 0.913);
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
-}
-.Navbar > h2{
-    margin-right: 50px;
-}
-.innerBox > h1
-{
-    flex-shrink: 0;
-    color:#61DAFB;
-    margin-left: -20px;
-}
-
-.maincontent
-{
-    margin : 3%;  
-}
-::marker
-{
-    color : #61DAFB;
-}
-
-.maincontent > h1
-{
-    font-size:265%;
-}
 
 body {
+    margin : 0;
+    font-family: Inter, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: #282D35;
     color:#DEEBF8;
-    background-image: url("logo.svg");
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y:12.5ch;
-
-
+}
+.container
+{
+    
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    background-color: rgba(25, 24, 24, 0.913);
+    border-radius:2.5%;
+    width: 18.5%;    
+    margin-left: 39%;
+    margin-top: 2.5%;
+}
+.info > img
+{
+    width:100%;
+    border-radius: 5%;
 }
 
+.info > h2
+{
+    font-size: 1.8rem;
+    margin-left: 18.5%;
 
+}
+#gold
+{
+    color: rgb(204, 188, 95);
+    margin-left: 22.5%;
+    margin-top: -5%;
+}
+#website
+{
+    font-size: 0.75rem;
+    margin-top: -2.5%;
+    margin-left: 33%;
+}
+.buttons
+{
+    display: flex;
+    justify-content:space-around;
+}
+#mail
+{
+   
+    background-color:white; /* Green */
+    border: none;
+    color:#282D35;
+    padding: 15px 20px;
+    font-size:0.7rem;
+    border-radius:1.1em;
+}
+
+#linkedin
+{
+   
+    background-color:rgb(55, 222, 222); /* Green */
+    border: none;
+    color:white;
+    padding: 10px 16px;
+    font: size 1.0rem;
+    border-radius:1.1em;
+}
+
+.interests
+{
+    margin-top: -5%;
+    margin-left: 3%;
+    font-size: 0.9rem;
+}
+
+.interests > h3
+{
+    font-size: 1.6rem;  
+}
+.interests > p
+{
+    margin-top: -5%;
+}
+
+.footer
+{
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer > img
+{
+    width: 15%;
+}
 
 
 
