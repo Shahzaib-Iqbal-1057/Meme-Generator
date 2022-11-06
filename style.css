@@ -1,44 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color:rgb(237, 230, 230);
+    margin: 0;    
 }
-
-.logo {
-    height: 75px;
-    display: flex;
-    padding: 20px 36px;
-    box-shadow: 0px 2.9px 7.4px rgba(0, 0, 0, 0.1);
-    background-color: white;
-}
-
-
-.cards-bar {
-    margin-left: 12.5%;
-    padding : 2.5%;
-    width : 60%;
-    display: flex;
-    gap: 5%;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-
-}
-
-.cards
+.navbar
 {
-    width: 30%;
-    font-size: 0.9rem;
-    flex: 0 0 auto;
-    display: flex;          
-    flex-direction: column; 
-}
 
-.images {
+    font-family: Inter;
     width: 100%;
-    height: 17.5ch;
-    border-radius: 5%;
+    background-color: #F55A5A;
+    height: 8ch;
+    color: #FFFFFF;
+    display: flex;
+    /* box-shadow: 0px 2px 4px rgba(170, 166, 166, 0.5); */
+    
+}
+.navbar > p
+{
+    margin-left: 1%;
+    margin-top: 2.1%;
+
+} 
+
+.navbar > img
+{
+    width: 3%;
+    height: 55%;
+    background-color: #DADADA;
+    margin-left: 39.3%;
+    margin-top: 1.25%;
+    border-radius: 50%;
+
+}
+
+.single-place
+{
+    padding: 1%;
+    margin-left: 25%;
+    display: flex;
 
 }
 
 
+.single-place > img
+{
+    width: 15%;
+    height: 22.5ch;
+    border-radius: 7.5%;
+}
 
+.content
+{
+    font-family: Inter;
+    letter-spacing: 0.05rem;
+    font-size: 0.9rem;
+    padding-left: 1%;
+    
+}
+.top
+{
+    display: flex;
+    align-items: baseline;
+}
+
+.top > a
+{
+    font-size: 0.7rem;
+    text-decoration-line: underline;
+    color: #918E9B;
+    margin-left: 2.5%;
+    flex-shrink: 0;
+}
+.content > h2
+{
+    margin-top: 0%;    
+    color: #2B283A;
+    font-size: 1.2rem;
+}
+.date
+{
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 800;
+}
+.content > p
+{
+    width:50%;
+    font-size: 0.75rem;
+}

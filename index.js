@@ -1,52 +1,64 @@
+
 import React from "react";
-import ReactDom from 'react-dom';
-import "./style.css";
+import ReactDom from "react-dom";
+import "./style.css"
 import Data from "./Data.js";
-import airbnb from "./air_bnb_logo.webp"
+import travel from "./travel.jpeg"
 
 
-const NavBar = () => 
+const NavBar = () =>
 {
   return (
-    <div className="logo">
-      <img src = {airbnb} alt = "airBnB logo"/>
+    <div className="navbar">
+      <img src = {travel} alt = "travel logo"/>
+      <p>my travel journal.</p>
     </div>
   )
 }
-
-const Card = (props) => {
+const Place = (props) =>
+{
   return (
-    <div className="cards">
-      <img src={props.coverImg} alt = "project images" className="images"/>
-      <p>{props.stats.rating}({props.stats.reviewCount}).{props.location}</p>
-      <h2>{props.title}</h2>
-      <p>{props.description}</p>
-      <strong>From ${props.price} / Person</strong>
-      
-    </div>
+    <div className="single-place">
+        <img src = {props.imageUrl} alt = "place"/>
+        <div className="content">
+          <div className="top">
+            <p>{props.location}</p>
+            <a href={props.googleMapsUrl} target = "_blank"  rel="noreferrer">View on google maps</a>
+          </div>
+          <h2>{props.title}</h2>
+          <p class = "date">{props.startDate}-{props.endDate}</p>
+          <p>{props.description}</p>
+        </div>
+
+
+
+      </div>
   )
 }
 
-const array = Data.map(function(x) 
+
+const Body = () =>
 {
-  return (
-    <Card  id = {x.id} title = {x.title} description = {x.description}
-    price = {x.price} coverImg = {x.coverImg} stats = {x.stats} location = {x.location}
-    openSpots  = {x.openSpots}/>
-  )
-})
+  const array = Data.map(function(x)
+  {
+    return (
+      <Place {...x}/>
+    )
+  })
+  return array;
+}
+
+
 
 
 const Element = <>
-  <>
-    <NavBar/>
-    <div className="cards-bar">
-      {array}
-    </div>
-  </>
+
+  <NavBar/> 
+  <Body className = "places"/> 
+
 </>
 
-  
+
 
 
 const root = ReactDom.createRoot(document.getElementById('root'));
