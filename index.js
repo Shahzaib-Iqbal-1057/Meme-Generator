@@ -1,65 +1,51 @@
-
-import React from "react";
-import ReactDom from "react-dom";
-import "./style.css"
+import React from 'react';
+import ReactDOM  from 'react-dom/client';
+import "./style.css";
 import Data from "./Data.js";
-import travel from "./travel.jpeg"
 
 
-const NavBar = () =>
+
+
+const Navbar = () =>
 {
-  return (
-    <div className="navbar">
-      <img src = {travel} alt = "travel logo"/>
-      <p>my travel journal.</p>
-    </div>
-  )
+  return (<div className='navbar'>
+    <h1>Meme Generator</h1>
+    <p>React Course Project-3</p>
+  </div>) 
 }
-const Place = (props) =>
+const Meme = () =>
 {
-  return (
-    <div className="single-place">
-        <img src = {props.imageUrl} alt = "place"/>
-        <div className="content">
-          <div className="top">
-            <p>{props.location}</p>
-            <a href={props.googleMapsUrl} target = "_blank"  rel="noreferrer">View on google maps</a>
-          </div>
-          <h2>{props.title}</h2>
-          <p class = "date">{props.startDate}-{props.endDate}</p>
-          <p>{props.description}</p>
-        </div>
-
-
-
-      </div>
-  )
-}
-
-
-const Body = () =>
-{
-  const array = Data.map(function(x)
+  
+  const [meme_url,setUrl] = React.useState("https://i.imgflip.com/2za3u1.jpg");
+  const handleClick = () =>
   {
-    return (
-      <Place {...x}/>
-    )
-  })
-  return array;
+    let random = Math.floor(Math.random()*Data.data.memes.length);
+    setUrl(Data.data.memes[random].url);
+    console.log(Data.data.memes[random].url);
+  }
+  return (
+  <>
+    <div className='meme'>
+      <div className='input'>
+        <input type="text" placeholder= "top text" className='left'></input>
+        <input type="text" placeholder='bottom text' className='right'></input>
+      </div> 
+      <button onClick={handleClick}>Get an new meme image 🖼</button>
+    </div>  
+    <img src = {meme_url} alt = "Meme" className='meme-image'/>
+  </>
+  )
 }
+
+
+
 
 
 
 
 const Element = <>
-
-  <NavBar/> 
-  <Body className = "places"/> 
-
+  <Navbar/>
+  <Meme/>
 </>
-
-
-
-
-const root = ReactDom.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(Element)
